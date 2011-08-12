@@ -1,0 +1,15 @@
+h1 IDF Association Remover
+form(action="/associate/remove/submit", method="post")
+    
+    h3 Select an Association to remove:
+    - for (i in associations)
+        - var a = associations[i]
+        p
+            input(type="radio", name="association", value="#{a.id}")
+            |#{a.type}: #{a.name} -> Component: #{a.component}
+
+    p
+        input(type="submit", value="Submit")
+        
+    p
+        a(href="/associate/form") Keep Associating

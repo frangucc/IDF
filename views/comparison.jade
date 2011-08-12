@@ -1,0 +1,35 @@
+- var components = [{id:1, name:"first"},{id:2, name:"second"}]
+- var classes = ["question", "answer"]
+- var ids = ["heading", "body"]
+- var tags = ["a", "img"]
+
+h1 IDF Component Selection
+form(action="/componentSelect/submit", method="post")
+    h3 Select the class/id/tag that you would like to associate:
+    p
+        |Available Classes:
+        select
+            option(value="none")
+            - for (i in classes)
+                option(value="#{classes[i]}") #{classes[i]}
+    p
+        |Available IDs:
+        select
+            option(value="none")
+            - for (i in ids)
+                option(value="#{ids[i]}") #{ids[i]}
+    p
+        |Available Tags:
+        select
+            option(value="none")
+            - for (i in tags)
+                option(value="#{tags[i]}") #{tags[i]}
+    
+    h3 Choose the IDF Component:
+    p
+        select
+            
+            - for(i in components)
+                option(value="#{components[i].id}") #{components[i].name}
+    p
+        input(type="submit", value="Submit")

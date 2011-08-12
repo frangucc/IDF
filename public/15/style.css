@@ -1,0 +1,118 @@
+@charset "utf-8";
+/* css for Q/A */
+
+/* Controlling the whole document */
+body{ text-align:left; font-family:"georgia", Times, serif; font-size:12pt; color:#000000;}
+.container{text-align:left; font-family:"georgia", Times, serif; font-size:12pt; color:#000000;}
+
+
+/*formatting for question section*/
+div#question{font-weight:normal; font-style:normal; font-family:"georgia", Times, serif; padding-bottom:10px;}
+.question{font-weight:bold;}
+
+/*formating of options section*/
+.options{padding-bottom:10px;}
+
+/*formatting for solution section*/
+div#solution{}
+.solution{font-weight:bold; display:table;}
+
+/*Headings*/
+h1{font-family: "georgia";	font-size:16pt;	text-align: left;	font-weight: bold;	font-style: normal;}
+h2{font-family: "georgia";	font-size:14pt;	text-align: left;	font-weight: bold;	font-style: normal;	}
+
+/*To implement extra spacing----indenting the paras*/
+.space{margin-left:100px;}
+.space_para{margin-left:45px;}
+.span-1  { width: 25px; float: left;}
+.span-2  { width: 45px; float: left;}
+
+/* to Highlight the text --- it is used in passages */
+.highlight{background-color:#0066FF;}
+.highlighta{background-color:#00FF00;}
+
+
+/* to control the layout of different sections*/
+.Floatl{float:left; margin-bottom:10px;}
+.clear{clear:both;}
+
+/*implemeting the border and formatting on table*/
+div.border { padding-right: 4px; border: 1px solid #000;}
+.dtable{border:solid 1px; padding:10px; float:left;}
+.dtr{border:solid 1px; padding:10px; float:left;}
+.Equal {width: 5px;}
+td.center{vertical-align:middle;}
+td.Right{text-align:right ;}
+
+
+
+/* formatting for lists---different types of lists*/
+li ul, 
+ol li   { margin: 0 0 0px 0px; }
+ul, ol      { margin: 0 0 6px -12px; }
+
+ol          { list-style-type: upper-alpha; }
+ol p 		 {font: normal 12pt "georgia", Times, serif;	color: #000;margin: 0;}
+
+/* list 1 style */
+#list1 {
+	font: italic 12px georgia;
+	color: #000000;
+}
+#list1 p {
+	font: normal .8em georgia;
+	color: #000000;
+	list-style-image:inherit;
+}
+ul{
+list-style-image: url(q2.png);
+
+}
+ul p {
+	font: normal 14px georgia;
+	color: #000;
+	border-left: solid 0px #999;
+	margin: 0;
+	padding:0px 0 1px 1px;
+}
+/* list 2 styles */
+#list2 {
+	font: bold 1em georgia;
+	color: #0000;
+	list-style:upper-roman;
+}
+#list2 p {
+	font: normal 12pt "georgia", Times, serif;
+	color: #000;
+}
+
+/* list 3 styles */
+#list3 {
+	font: bold 12pt "georgia", Times, serif;
+	color: #000;
+}
+#list3 p {
+	font: normal 12pt "georgia", Times, serif;
+	color: #000;
+	margin-left:0;
+	padding: 0 0 1px 0;
+}
+
+/* list 3 styles */
+.list31{
+	font: bold 12pt "georgia", Times, serif;
+	color: #000;
+}
+.list31 p {
+	font: normal 12pt "georgia", Times, serif;
+	color: #000;
+	margin-left:0;
+	padding: 0 0 1px 0;
+}
+
+/*To create fraction equations*/
+.frac{display:inline-table; vertical-align:middle; white-space:nowrap}
+.equation{ white-space:nowrap}
+td.num{border-bottom:1px solid #000000; vertical-align:bottom; text-align:center;}
+td.den{text-align:center; vertical-align:top;}
+.extra-spaces{padding-left:20px; padding-right:20px;}

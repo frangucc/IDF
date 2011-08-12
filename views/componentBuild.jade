@@ -1,0 +1,30 @@
+h1 IDF Component Builder
+form(action="/components/form/submit", method="post")
+    
+    p Select an Action
+    p
+        input(type="radio", name="action", value="new", checked)
+        |New Component
+    p
+        input(type="radio", name="action", value="rename")
+        |Rename a Component
+    p
+        input(type="radio", name="action", value="delete")
+        |Delete a Component
+        
+    
+    p Pick an existing component to rename or delete
+    p
+        select(name="componentId")         
+            - for(i in components)
+                option(value="#{components[i].id}") #{components[i].name}
+    
+    p Enter New Component Name:
+    p
+        input(type="text", name="name")    
+    
+    p
+        input(type="submit", value="Submit")
+        
+    p
+        a(href="/associate/form") Start Associating
