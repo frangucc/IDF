@@ -1,0 +1,67 @@
+script(type='text/javascript', src='javascripts/treeScript.js')
+style#selected
+div#doc.left_col
+    script(type="text/javascript")
+        $("#doc").load("#{url}", function(response, status, xhr) {
+        });
+
+div.right_col
+    h3 Classes
+    ul
+        - for (class in classes)
+            li
+                a.classIDF(href="") #{class}
+
+    h3 IDs
+    ul
+        - for (id in ids)
+            li
+                a.idIDF(href="") #{id}
+
+    h3 Tags
+    ul
+        - for (tag in tags)
+            li
+                a.tagIDF(href="") #{tag}
+    
+div.clear
+    h3 IDF Component Selection
+    
+    form(action="/associate/form/submit", method="post")
+        input(type="hidden", name="packageId", value="15")
+        p Select the class/id/tag that you would like to associate:
+        
+        p
+            |Available Classes:
+            select.availClasses(name="classes")
+                option(value="none")
+                - for (i in classes)
+                    option(value="#{i}") #{i}
+            
+            |, Available IDs:
+            select.availIds(name="ids")
+                option(value="none")
+                - for (i in ids)
+                    option(value="#{i}") #{i}
+            
+            |, Available Tags:
+            select.availTags(name="tags")
+                option(value="none")
+                - for (i in tags)
+                    option(value="#{i}") #{i}
+        
+        p Select the corresponding IDF component:
+            select(name="componentId")
+                - for(i in components)
+                    option(value="#{components[i].id}") #{components[i].name}
+        
+        p
+            input(type="submit", value="Submit")
+            | -- 
+            a(href="/components/form") Add or Edit IDF Components
+        p
+            a(href="/associate/remove") Remove Associations
+            | -- 
+            a(href="/createObjects") Use Associations to Create IDF Objects
+    p#tree
+        

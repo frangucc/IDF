@@ -1,0 +1,40 @@
+h2 You are editing a filter for: #{name}
+
+form(action="/editFilter/submit", method="post")
+    input(type="hidden", name="id", value="#{filter.id}")
+    input(type="hidden", name="package", value="#{filter.package}")
+    input(type="hidden", name="original", value="#{filter.filter}")
+    h3
+        |Would you like to remove this filter?
+    p
+        input(type="radio", name="removal", value="yes")
+        |Yes
+    p
+        input(type="radio", name="removal", value="no", checked)
+        |no
+        
+    h3
+        |Edit filter text:
+        input(type="text", name="text", value="#{filter.filter}")
+        
+    div(class="workers")
+        h3
+            |Select the workers that you would like to apply the filter to:
+        - for (worker in allWorkers)
+            p
+                |   #{allWorkers[worker]} 
+                - if(filter[worker] == true)
+                    input(type="checkbox", name="subjects", value="#{worker}", checked)
+                - else
+                    input(type="checkbox", name="subjects", value="#{worker}")
+    h3
+        |Would you like all child nodes to recieve this filter change as well (also applies to removal)?
+    p
+        input(type="radio", name="propagate", value="yes", checked)
+        |Yes
+    p
+        input(type="radio", name="propagate", value="no")
+        |No 
+           
+    p
+        input(type="submit", value="Edit Filter")

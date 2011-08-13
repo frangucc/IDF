@@ -1,0 +1,40 @@
+h2 You are adding a filter to: #{name}
+
+form(action="/addFilter/submit", method="post")
+    input(type="hidden", name="id", value=id)
+    input(type="hidden", name="package", value=package)
+    h3
+        |Enter filter text:
+        input(type="text", name="text")
+    p
+        |Enter the following for special types of filters (the text for the special filters does not actually get used)
+        ol
+            li
+                |Enter
+                b "workers" 
+                |to have the filter choose the workers used in a search
+            li
+                |Enter
+                b "alt: [alternative text]" 
+                |to choose alternative text to query with to replace ambigious section headers
+                br
+                |For example if I wanted to query with only the phrase "science," I would enter "alt: science"
+    div(class="workers")
+        h3
+            |Select the workers that you would like to apply the filter to:
+        - for (worker in allWorkers)
+            p
+                |   #{allWorkers[worker]}
+                input(type="checkbox", name="subjects", value="#{worker}", checked)
+    h3
+        |Would you like all child nodes to recieve this filter as well?
+    p
+        input(type="radio", name="propagate", value="yes", checked)
+        |Yes
+    p
+        input(type="radio", name="propagate", value="no")
+        |No 
+    p
+        |Note: child nodes will not recieve alternative text if "alt" is the special filter
+    p
+        input(type="submit", value="Add Filter")

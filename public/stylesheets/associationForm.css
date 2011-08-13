@@ -1,0 +1,39 @@
+body {
+  padding: 10px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h3 {
+    padding: 0;
+    margin: 0;
+}
+p {
+    padding: 0;
+    margin: 0;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+a {
+  color: #0053AA;
+}
+.left_col {
+    float: left;
+    width: 70%;
+    overflow: auto;
+    height: 400px;
+    border: 1px solid black;
+    float: left;
+}
+
+.right_col {
+    margin: 0 0 0 20px;
+    width: 25%;
+    border: 1px solid black;
+    float: left;
+    height: 400px;
+    overflow: auto;
+}
+
+.clear {
+    clear: both;
+}

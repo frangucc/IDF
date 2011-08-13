@@ -1,9 +1,43 @@
 !!!
 html
   head
+  
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src="http://code.jquery.com/jquery-latest.js")
-    script(type="text/javascript", src="/javascripts/jquery-jstree/jquery.jstree.js")
-    script(type="text/javascript", src="/javascripts/docLoading.js")
-  body!= body
+    
+
+    - if (type=="jstree")
+        script(type="text/javascript", src="/javascripts/jquery-jstree/_lib/jquery.js")
+        
+        link(rel='stylesheet', href='/stylesheets/contentTree.css')
+        
+        script(type="text/javascript", src="/javascripts/jquery-jstree/jquery.jstree.js")
+    
+    - if (type=="accordion")
+        script(type="text/javascript", src="/javascripts/jquery-accordion/lib/jquery.js")
+        
+        script(type="text/javascript", src="/javascripts/jquery-accordion/lib/chili-1.7.pack.js")
+        
+        script(type="text/javascript", src="/javascripts/jquery-accordion/lib/jquery.easing.js")
+
+        script(type="text/javascript", src="/javascripts/jquery-accordion/lib/jquery.dimensions.js")
+
+        script(type="text/javascript", src="/javascripts/jquery-accordion/jquery.accordion.js")
+        
+        script(type='text/javascript', src='/javascripts/accordionScript.js')
+        
+        link(rel="stylesheet", href="/javascripts/jquery-accordion/demo/demo.css")
+        
+    - if (type=="docLoading jstree")
+        script(src="http://code.jquery.com/jquery-latest.js")
+        
+        script(type="text/javascript", src="/javascripts/jquery-jstree/jquery.jstree.js")
+        
+        script(type="text/javascript", src="/javascripts/docLoading.js")
+        
+        link(rel="stylesheet", href='/stylesheets/associationForm.css')
+        
+    link(rel="stylesheet", href='/stylesheets/styles.css')
+    
+  body
+    div#navigation!=partial('navigation.jade')
+    div#main!=body
